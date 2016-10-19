@@ -1,7 +1,15 @@
-require_relative "test_api"
-require_relative "app"
+require_relative "trial_day"
 
+get "/bla" do
+  { results: [1, 2, 3] }
+end
+
+post "/bla" do |params|
+  name = params[:name]
+
+  { name: name }
+end
 
 map "/" do
-  run App.new
+  run TrialDay::App.new
 end
